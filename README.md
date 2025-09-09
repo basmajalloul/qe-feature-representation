@@ -46,11 +46,3 @@ Each dataset contains classical and quantum versions of extracted gait features.
 ## 🧪 Methodology
 
 Each experiment uses PCA-reduced features (4D) as inputs to RNN and QE-RNN models. Quantum-enhanced features were obtained via parameterized circuits executed on IBM Qiskit backends. Ablation studies explore PCA vs raw feature usage, and RNN vs MLP classifier performance.
-
-## 🔒 Anonymity Statement
-
-This repository has been anonymized for peer review. It contains no author-identifying metadata or institutional information.
-
-## 📜 Citation
-
-This work is part of an anonymized submission to ECAI 2025. The repository will be updated with author information upon acceptance.
