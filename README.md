@@ -1,5 +1,5 @@
 
-# Quantum-Enhanced Feature Representation for Motor Function Assessment
+# Quantum-Enhanced Recurrent Models for Cognitive–Motor Assessment
 
 This repository contains all data and code used in the experiments described in our ECAI 2025 submission (Paper #2668).
 
