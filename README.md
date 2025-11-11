@@ -1,5 +1,8 @@
+# Quantum-Enhanced Feature Representation for Motor Function Assessment
 
-# Quantum-Enhanced Recurrent Models for Cognitive–Motor Assessment
+This repository contains all data, preprocessing, and experimental code used in the study on **Quantum-Enhanced Feature Representation for Cognitive and Motor Function Assessment**, submitted to *Applied Soft Computing* (Double-Blind Review Version).
+
+---
 
 ## 📂 Repository Structure
 
@@ -8,39 +11,68 @@ qe-feature-representation/
 ├── mci/
 │   ├── mci_features.csv / mci_features_quantum.csv
 │   ├── pose_features_master.csv
-│   ├── qernn_mci.ipynb
-│   └── rnn_mci.ipynb
+│   ├── qernn_mci.ipynb / rnn_mci.ipynb
 ├── stroke/
 │   ├── stroke_features.csv / stroke_features_quantum.csv
-│   ├── qernn_stroke.ipynb
-│   └── rnn_stroke.ipynb
+│   ├── qernn_stroke.ipynb / rnn_stroke.ipynb
 ├── parkinson/
-│   ├── final_parkinsons_features.csv
-│   ├── quantum_raw_parkinsons_gait_percent.csv
+│   ├── final_parkinsons_features.csv / quantum_raw_parkinsons_gait_percent.csv
 │   ├── qernn_parkinsons.ipynb / rnn_parkinsons.ipynb
 │   └── ablation/
-│       ├── qernn_parkinsons_ablation_{pca,mlp}.ipynb
-│       └── rnn_parkinsons_ablation_{pca,mlp}.ipynb
-├── quantum_features_extraction_mci.ipynb
-└── .gitattributes
+│       ├── qernn_parkinsons_ablation_{cnn,mlp,pca,transformer}.ipynb
+│       └── rnn_parkinsons_ablation_{cnn,mlp,pca,transformer}.ipynb
+├── *_feature_extraction_standard.ipynb
+├── *_quantum_features_extraction.ipynb
+└── README.md
 ```
+
+---
 
 ## 🧠 Overview
 
-The project evaluates the use of quantum-enhanced (QE) feature encoding for cognitive and motor function classification. We compare traditional RNNs against QE-RNNs across three datasets:
-- MCI (synthetic)
-- Stroke (clinical)
-- Parkinson's (clinical)
+This repository explores the integration of **quantum-enhanced (QE)** feature encoding with classical deep learning architectures for the assessment of cognitive and motor function.  
+We evaluate **classical RNNs**, **CNNs**, **Transformers**, and **MLPs** against their **QE-augmented counterparts (QE-RNN, QE-CNN, QE-Transformer)** using:
 
-Each dataset contains classical and quantum versions of extracted gait features. Experiments are grouped accordingly with separate notebooks per model and dataset.
+- 🧩 **Syn-MCI (synthetic gait dataset)**  
+- 🧠 **SN-Gait (stroke gait dataset)**  
+- 🧍 **PD-Gait (Parkinson’s gait dataset)**  
 
-## 🛠️ Contents
+Each dataset includes classical and quantum-enhanced feature variants, normalized and aligned for model comparison.
 
-- 📁 `mci/`: Experiments and features for MCI dataset
-- 📁 `stroke/`: Experiments and features for stroke dataset
-- 📁 `parkinson/`: Experiments and features for Parkinson's dataset including ablation studies
-- 📄 `quantum_features_extraction_mci.ipynb`: Notebook for extracting QE features using quantum hardware
+---
+
+## ⚙️ Preprocessing and Feature Extraction
+
+All preprocessing pipelines are included:
+- **Synthetic (Syn-MCI):** Pose-based feature generation with temporal derivatives and gait statistics.  
+- **Stroke (SN-Gait):** Windowed joint-angle time series with per-subject segmentation.  
+- **Parkinson’s (PD-Gait):** Statistical and frequency-domain features (FFT, RMS, skewness, kurtosis, dominant frequency).  
+
+Each extraction notebook (e.g., `mci_feature_extraction_standard.ipynb`) produces both **classical** and **quantum** feature tables (`*_features.csv` / `*_features_quantum.csv`).
+
+Normalization, labeling, and windowing parameters are consistent across datasets for fair comparison.
+
+---
 
 ## 🧪 Methodology
 
-Each experiment uses PCA-reduced features (4D) as inputs to RNN and QE-RNN models. Quantum-enhanced features were obtained via parameterized circuits executed on IBM Qiskit backends. Ablation studies explore PCA vs raw feature usage, and RNN vs MLP classifier performance.
+- Quantum circuits executed on IBM’s **ibm_kyiv (Eagle-r3)** backend via the Qiskit Runtime Sampler (v1).  
+- Shallow encoding + entanglement layers optimized for NISQ constraints.  
+- Deduplication and caching implemented to minimize redundant quantum executions.  
+- Cross-validation (5-fold) with independent caches per fold ensures isolation between training and test partitions.  
+- Ablation notebooks evaluate the effect of architecture and preprocessing variants.
+
+---
+
+## 🔍 Reproducibility
+
+All scripts required for reproducing the datasets, feature extraction, and training are provided.  
+Due to the double-blind review process, this repository is anonymized; it will be made public with full author metadata upon paper acceptance.
+
+---
+
+## 🧾 Citation
+
+**Anonymous Authors** (2025).  
+*Quantum-Enhanced Feature Representation for Motor Function Assessment.*  
+Submitted to *Applied Soft Computing*.
