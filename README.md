@@ -1,6 +1,6 @@
 # Quantum-Enhanced Feature Representation for Motor Function Assessment
 
-This repository contains all data, preprocessing, and experimental code used in the study on **Quantum-Enhanced Feature Representation for Cognitive and Motor Function Assessment**, submitted to *Applied Soft Computing* (Double-Blind Review Version).
+This repository contains all data, preprocessing, and experimental code used in the study on **Quantum-Enhanced Feature Representation for Cognitive and Motor Function Assessment**, published in *Applied Soft Computing*.
 
 ---
 
@@ -73,6 +73,4 @@ Due to the double-blind review process, this repository is anonymized; it will b
 
 ## 🧾 Citation
 
-**Anonymous Authors** (2025).  
-*Quantum-Enhanced Feature Representation for Motor Function Assessment.*  
-Submitted to *Applied Soft Computing*.
+Jalloul, B., Bouaziz, B., & Mahdi, W. (2026). Quantum-enhanced recurrent models for cognitive–motor assessment. Applied Soft Computing, 114696. https://doi.org/10.1016/j.asoc.2026.114696
